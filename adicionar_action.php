@@ -11,7 +11,7 @@
         if($usuarioDao->findByEmail($email) === false){
 
             $novoUsuario = new Usuario();
-            $novoUsuario->setNome($name);
+            $novoUsuario->setNome($nome);
             $novoUsuario->setEmail($email);
 
             $usuarioDao->add($novoUsuario);

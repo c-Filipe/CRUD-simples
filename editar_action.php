@@ -11,17 +11,12 @@
     if($nome && $email){
 
         $usuario = $usuarioDao->findById($id);
-        $usuario->setNome($name);
+        $usuario->setNome($nome);
         $usuario->setEmail($email);
 
         $usuarioDao->update($usuario);
 
-        $sql = $pdo->prepare("UPDATE usuarios SET nome = :nome , email = :email WHERE id=:id ");
-        $sql->bindValue(':nome',$nome);
-        $sql->bindValue(':email',$email);
-        $sql->bindValue(':id',$id);
-        $sql->execute();
-
+       
         header("location: index.php");
         exit;
 
